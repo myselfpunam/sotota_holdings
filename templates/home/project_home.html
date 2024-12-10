@@ -1,0 +1,44 @@
+{% load static %}
+<!-- OUR PROJECTS SECTION START -->
+<div class="section-full  p-t80 p-b80 bg-gray px-2">
+    <div class="container">
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">All Projects</small>
+                <h2 class="m-b5">Our Latest Projects</h2>
+            </div>
+            <div class="title-right-detail">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY CONTENT START -->
+    <div class="portfolio-wrap mfp-gallery work-grid row clearfix ">
+        {% for project in project%}
+        <!-- COLUMNS 1 -->
+        <div class="masonry-item cat-1 col-lg-3 col-md-4 col-sm-6 m-b30">
+
+            <div class="project-img-effect-1">
+                {% if project.thumbnail_image %}
+                <img src="{{project.thumbnail_image.url}}" alt="" />
+                {% endif %}
+                <div class="wt-info">
+                    <h4 class="wt-tilte text-warning  m-b10 m-t0">{{project.name}}</h4>
+                    <p>{{project.address}}</p>
+                </div>
+                <i></i>
+                <a href="{% url 'get_projects' project.id %}"></a>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <!-- GALLERY CONTENT END -->
+    <div class="text-center">
+       <a href="{% url 'all_projects' %}"> <button id="load-more" class="btn btn-warning rounded load-more-button m-t20">More Projects</button></a>
+    </div>
+</div>
+
+</div>
+<!-- OUR PROJECTS SECTION END -->

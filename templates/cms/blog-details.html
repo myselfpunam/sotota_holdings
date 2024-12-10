@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- INNER PAGE BANNER -->
+<div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center pt-5" data-stellar-background-ratio="0.5"
+    style="background-color: black;">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <div class="banner-title-outer">
+                <div class="banner-title-name">
+                    <h2 class="text-white">Blog Details</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- INNER PAGE BANNER END -->
+<!-- SECTION CONTENT START -->
+<div class="section-full p-tb90">
+    <div class="container">
+        <div class="blog-detail-outer">
+            <div class="blog-detail-containt">
+                <div class="bg-white text-black">
+                    <h3>{{blog_details.title}}</h3>
+                    <p>{{blog_details.description}}</p>
+                    <div class="product-block-detail">
+                        <ul>
+                            <li>
+                                <h5 class="m-b10">Writer</h5>
+                                <p>{{blog_details.writer}}</p>
+                            </li>
+                            <li>
+                                <h5 class="m-b10">Date</h5>
+                                <p>{{blog_details.date}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wt-media m-b30">
+                        {% if blog_details.image %}
+                            <img src="{{ blog_details.image.url}}" alt="" />
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- SECTION CONTENT END  -->
+
+{% endblock body %}

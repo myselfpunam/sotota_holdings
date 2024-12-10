@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- INNER PAGE BANNER -->
+<div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center pt-5" data-stellar-background-ratio="0.5"
+    style="background-color: black;">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <div class="banner-title-outer">
+                <div class="banner-title-name">
+                    <h2 class="text-white">Project Details</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- INNER PAGE BANNER END -->
+<!-- SECTION CONTENT START -->
+<div class="section-full p-tb90">
+    <div class="container">
+        <div class="project-detail-outer">
+            <div class="project-detail-containt">
+                <div class="bg-white text-black">
+                    <h3>{{project_details.name}}
+                    </h3>
+                    <p class="text-dark">{{project_details.description}}</p>
+                    <div class="wt-media row m-b30">
+                        <div class="col-md-6">
+                            {% if project_details.thumbnail_image %}
+                            <img src="{{ project_details.thumbnail_image.url}}" alt="" />
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Address</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.address}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Architect name</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.architect_name}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Land area</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.land_area}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Specialty of the land</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.Specialty_of_the_land}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Total floor</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.total_floor}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Total apartments</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.total_apartments}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Unit size</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.unit_size}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Road width</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.road_width}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Total basements</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.total_basements}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Total parking</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.total_parking}} </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="text-danger font-weight-bold">Approval no</p>
+                                </div>
+                                <div class="col-md-1">
+                                    <p class="text-danger font-weight-bold">: </p>
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="font-weight-bold text-dark">{{project_details.approval_no}} </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid project-detail-pic">
+        <div class="container pt-5">
+            <div class="section-head clearfix">
+                <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                    <small class="wt-small-title">GALLERY</small>
+                    <h2 class="m-b5">Project Gallery</h2>
+                </div>
+                <div class="title-right-detail">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 m-b30">
+                <div class="project-detail-pic ">
+                    <div class="wt-media">
+                        {% if project_details.first_image %}
+                        <img src="{{ project_details.first_image.url}}" alt="" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 m-b30">
+                <div class="project-detail-pic">
+                    <div class="wt-media">
+                        {% if project_details.second_image %}
+                        <img src="{{ project_details.second_image.url}}" alt="" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 m-b30">
+                <div class="project-detail-pic">
+                    <div class="wt-media">
+                        {% if project_details.third_image %}
+                        <img src="{{ project_details.third_image.url}}" alt="" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- SECTION CONTENT END  -->
+
+{% endblock body %}

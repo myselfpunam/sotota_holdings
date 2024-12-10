@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- CONTENT START -->
+<div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center" data-stellar-background-ratio="0.5"
+        style="background-color: black;">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <div class="banner-title-outer">
+                    <div class="banner-title-name">
+                        <h2 class="text-white">Contact Us</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- SECTION CONTENTG START -->
+    <div class="section-full p-t80">
+        <!-- LOCATION BLOCK-->
+        <div class="container">
+
+            <!-- GOOGLE MAP & CONTACT FORM -->
+            <div class="section-content">
+                <div class="contact-form p-a30 bg-gray rounded">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <!-- templates/contact_us.html -->
+                    <form method="POST" action="{% url 'contact_us' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Type Your Name Here" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Type Your Email Here" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Type Your Phone Here" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write A Short Message Here" required></textarea>
+                        </div>
+                        <button type="submit" class="site-button radius-no text-uppercase font-weight-600">Submit</button>
+                    </form>
+
+                </div>
+
+                <div class="contact-info text-center m-t80 m-b50">
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="wt-icon-box-wraper center m-b30">
+                                <div class="icon-md m-b20"><i class="sl-icon-phone"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Phone number</h5>
+                                    <p>{{company_info.primary_phone}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="wt-icon-box-wraper center m-b30">
+                                <div class="icon-md m-b20"><i class="sl-icon-envolope"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Email address</h5>
+                                    <p>{{company_info.email}}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="wt-icon-box-wraper center m-b30">
+                                <div class="icon-md m-b20"><i class="sl-icon-map"></i></div>
+                                <div class="icon-content">
+                                    <h5 class="m-t0 font-weight-500">Address info</h5>
+                                    <p>{{company_info.address}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- SECTION CONTENT END -->
+
+</div>
+<!-- CONTENT END -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+{% endblock body %}

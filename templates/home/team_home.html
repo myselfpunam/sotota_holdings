@@ -1,0 +1,47 @@
+{% load static %}
+<!-- OUR TEAM START -->
+<div class="section-full p-t80 p-b50 bg-gray">
+    <div class="container">
+
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">Our Experts</small>
+                <h2 class="m-b5">Our Best Team</h2>
+            </div>
+            <div class="title-right-detail">
+
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="row justify-content-center">
+                {% for team in team %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="wt-team-arc2 wt-team-arc2-no-border">
+
+                        <div class="wt-media">
+                            {% if team.photo %}
+                            <img src="{{team.photo.url}}" alt="">
+                            {% endif %}
+                            <div class="team-social-center">
+                                
+                            </div>
+                        </div>
+
+                        <div class="wt-info p-a30">
+                            <div class="team-detail  text-center">
+                                <h4 class="m-t0">{{team.name}}</h4>
+                                <p>{{team.designation}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- OUR TEAM END -->

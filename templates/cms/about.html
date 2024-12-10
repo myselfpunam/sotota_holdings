@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- INNER PAGE BANNER -->
+<div class="wt-bnr-inr overlay-wraper bg-parallax bg-top-center pt-5"  data-stellar-background-ratio="0.5"  style="background-color: black;">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <div class="banner-title-outer">
+                <div class="banner-title-name">
+                    <h2 class="text-white">About Us</h2>
+                </div>
+            </div>                       
+        </div>
+    </div>
+</div>
+<!-- INNER PAGE BANNER END -->
+<!-- WELCOME SECTION START -->
+
+<div class="section-full p-t80 p-b80 bg-white overflow-hide">
+    <div class="container pt-5">
+        <div class="section-content">
+
+            <div class="row">
+
+                <div class="col-lg-6 ">
+                    <div class="arc-home-about-left">
+                        <div class="arc-home-left-content">
+                            {% if about_us.image %}
+                            <img src="{{about_us.image.url}}" class="img-fluid" alt="">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ">
+                    
+                        {% if about_us.title %}
+                        <h3 class="m-t0 wt-tilte-light">{{about_us.title}}</h3>
+                        {% endif %}
+                        {% if about_us.description %}
+                        <p class="m-t0 wt-description">{{about_us.description}} </p>
+                        {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- WELCOME  SECTION END -->
+
+<!-- OUR TEAM START -->
+<div class="section-full p-t80 p-b50 bg-gray">
+    <div class="container">
+
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">Our Experts</small>
+                <h2 class="m-b5">Our Best Team</h2>
+            </div>
+            <div class="title-right-detail">
+
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="row justify-content-center">
+                {% for team in team %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="wt-team-arc2 wt-team-arc2-no-border">
+
+                        <div class="wt-media">
+                            {% if team.photo %}
+                            <img src="{{team.photo.url}}" alt="">
+                            {% endif %}
+                            <div class="team-social-center">
+                                
+                            </div>
+                        </div>
+
+                        <div class="wt-info p-a30">
+                            <div class="team-detail  text-center">
+                                <h4 class="m-t0">{{team.name}}</h4>
+                                <p>{{team.designation}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- OUR TEAM END -->
+
+<!-- OUR PARTNER START -->
+<div class="section-full p-t80 p-b50 bg-white">
+    <div class="container">
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">Sister Concerns</small>
+                <h2 class="m-b5">Our Sister Concerns</h2>
+            </div>
+            <div class="title-right-detail">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="section-content client-logo ">
+            <div class="row justify-content-center">
+                {% for sister_concerns in sister_concerns %}
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#" class="wt-img-effect client-logo-media shadow">
+                        {% if sister_concerns.photo %}
+                        <img src="{{sister_concerns.photo.url}}" alt="">
+                        {% endif %}
+                    </a>
+                    <h5>{{sister_concerns.name}}</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- OUR PARTNER END -->
+
+{% endblock body %}

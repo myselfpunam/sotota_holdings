@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<!-- OUR PROJECTS SECTION START -->
+<div class="section-full  p-t80 p-b80 bg-gray px-2">
+    <div class="container pt-5">
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">All Projects</small>
+                <h2 class="m-b5">Our Ready Projects</h2>
+            </div>
+            <div class="title-right-detail">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY CONTENT START -->
+    <div class="portfolio-wrap mfp-gallery work-grid row clearfix ">
+        {% for ready_projects in ready_projects%}
+        <!-- COLUMNS 1 -->
+        <div class="masonry-item cat-1 col-lg-3 col-md-4 col-sm-6 m-b30">
+
+            <div class="project-img-effect-1">
+                {% if  ready_projects.thumbnail_image %}
+                <img src="{{ ready_projects.thumbnail_image.url}}" alt="" />
+                {% endif %}
+                <div class="wt-info">
+                    <h4 class="wt-tilte text-warning  m-b10 m-t0">{{ ready_projects.name}}</h4>
+                    <p>{{ ready_projects.address}}</p>
+                </div>
+                <i></i>
+                <a href="{% url 'get_projects' ready_projects.id %}"></a>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+    <!-- GALLERY CONTENT END -->
+    
+</div>
+
+</div>
+<!-- OUR PROJECTS SECTION END -->
+
+{% endblock body %}

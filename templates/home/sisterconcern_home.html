@@ -1,0 +1,35 @@
+{% load static %}
+<!-- OUR PARTNER START -->
+<div class="section-full p-t80 p-b50 bg-white">
+    <div class="container">
+        <div class="section-head clearfix">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">Sister Concerns</small>
+                <h2 class="m-b5">Our Sister Concerns</h2>
+            </div>
+            <div class="title-right-detail">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="section-content client-logo ">
+            <div class="row justify-content-center">
+                {% for sister_concerns in sister_concerns %}
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="#" class="wt-img-effect client-logo-media shadow">
+                        {% if sister_concerns.photo %}
+                        <img src="{{sister_concerns.photo.url}}" alt="">
+                        {% endif %}
+                    </a>
+                    <h5>{{sister_concerns.name}}</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- OUR PARTNER END -->

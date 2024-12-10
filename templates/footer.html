@@ -1,0 +1,81 @@
+<!-- FOOTER START -->
+<footer class="site-footer footer-large  footer-light ">
+    <div class="footer-social-section bg-secondry">
+        <div class="container">
+            <div class="footer-social-content">
+                <ul>
+                    <li><a href="{{company_info.facebook_link}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="{{company_info.youtube_link}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="{{company_info.instagram_link}}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER BLOCKES START -->
+    <div class="footer-top overlay-wraper pl-5">
+        <div class="overlay-main"></div>
+        <div class="container-fluid">
+            <div class="row pl-4">
+                <!-- ABOUT COMPANY -->
+                <div class="col-xl-4 col-lg-4 col-md-4 pl-5">
+                    <div class="widget widget_about">
+                        {% if company_info.logo %}
+                        <img  src="{{company_info.logo.url}}" style="width: 200px; height: 200px; padding-bottom: 20px;"
+                            class="lmg-fluid pl-5" alt="">
+                        {% endif %}
+                        <br>
+                        <h4 class="widget-title  text-uppercase pl-5">{{company_info.company_name}}</h4>
+
+                    </div>
+                </div>
+
+
+
+                <!-- USEFUL LINKS -->
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="widget widget_services inline-links">
+                        <h4 class="widget-title">Useful links</h4>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'ready_projects' %}">Ready Projects</a></li>
+                            <li><a href="{% url 'ongoing_projects' %}">Ongoing Projects</a></li>
+                            <li><a href="{% url 'upcoming_projects' %}">Upcoming Projects</a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- TAGS -->
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <div class="widget widget_address_outer m-b20">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="widget_address">
+                            <li><strong>Address:</strong> {{company_info.address}}</li>
+                            <li><strong>Email:</strong> {{company_info.email}}</li>
+                            <li><strong>Phone:</strong> {{company_info.primary_phone}}</li>
+                            <li><strong>Phone:</strong> {{company_info.secondary_phone}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- NEWSLETTER -->
+
+            </div>
+
+        </div>
+    </div>
+    <!-- FOOTER COPYRIGHT -->
+    <div class="footer-bottom pl-5">
+        <div class="container">
+
+            <a href="index.html"><img src="images/logo-dark.png" alt=""></a>
+            <span class="copyrights-text">All Rights Reserved ©2024 Sotota Holdings LTD. Designed and Developed By <a class="text-success font-weight-bold"
+                    href="birdsnestcloud.com" target="_blank">Bird's Nest Cloud.</a></span>
+
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END -->

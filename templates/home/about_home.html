@@ -1,0 +1,39 @@
+{% load static %}
+
+<!-- WELCOME SECTION START -->
+{% if about_us.image %}
+
+
+<div class="section-full p-t80 p-b80 bg-white overflow-hide">
+    <div class="container">
+        <div class="section-content">
+
+            <div class="row">
+
+                <div class="col-lg-6 ">
+                    <div class="arc-home-about-left">
+                        <div class="arc-home-left-content">
+                            <img src="{{about_us.image.url}}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ">
+                    
+                        {% if about_us.title %}
+                        <h3 class="m-t0 wt-tilte-light">{{about_us.title}}</h3>
+                        {% endif %}
+                        {% if about_us.description %}
+                        <p class="m-t0 wt-description">{{about_us.description}} </p>
+                        {% endif %}
+                        <a href="{% url 'about_us' %}" class="site-button-link">Read More</a>
+                    
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endif %}
+<!-- WELCOME  SECTION END -->

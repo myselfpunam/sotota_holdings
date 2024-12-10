@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+{% load static %}
+<!-- OUR BLOG START -->
+<div class="section-full p-t80 p-b50 bg-white pt-5">
+    <div class="container">
+        <div class="section-head clearfix pt-5">
+            <div class="wt-tilte-main bdr-r-3 bdr-primary bdr-solid">
+                <small class="wt-small-title">Blog Section</small>
+                <h2 class="m-b5">Our All Blogs</h2>
+            </div>
+            <div class="title-right-detail">
+                
+            </div>
+        </div>
+        <div class="row equal-wraper">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="row latest-blog-2-outer m-t30">
+                    {% for blog in blog %}
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="blog-post latest-blog-2 mid-size-date bdr-1 bdr-solid bdr-gray  p-a20">
+                            <div class="wt-post-info">
+                                <div class="wt-post-meta ">
+                                    <ul>
+                                        {% if blog.date %}
+                                        <li class="post-date"><span>{{blog.date}}</span> </li>
+                                        {% endif %}
+                                        {% if blog.writer %}
+                                        <li class="post-author"><i class="fa fa-user-o"></i>
+                                            <a href="javascript:void(0);">By <span>{{blog.writer}}</span></a> </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                                <div class="wt-post-title ">
+                                    <h4 class="post-title"><a href="javascript:void(0);"> {{blog.title}}</a></h4>
+                                </div>
+                                <div class="wt-post-text ">
+                                    <p>{{ blog.description|truncatewords:20 }} </p>
+                                </div>
+                                <br>
+                                <a href="{% url 'get_blogs' blog.id %}" class="site-button-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleReadMore(button) {
+        const parent = button.closest('.wt-post-text');
+        const shortText = parent.querySelector('.short-text');
+        const fullText = parent.querySelector('.full-text');
+        const dots = parent.querySelector('.dots');
+
+        if (fullText.style.display === 'none') {
+            shortText.style.display = 'none';
+            dots.style.display = 'none';
+            fullText.style.display = 'block';
+            button.textContent = 'Read Less';
+        } else {
+            shortText.style.display = 'block';
+            dots.style.display = 'inline';
+            fullText.style.display = 'none';
+            button.textContent = 'Read More';
+        }
+    }
+</script>
+<!-- OUR BLOG END -->
+{% endblock body %}

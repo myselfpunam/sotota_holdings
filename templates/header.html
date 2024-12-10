@@ -1,0 +1,67 @@
+{% load static %}
+<!-- HEADER START -->
+
+<header class="site-header header-style-2  header-fixed nav-wide">
+  <div class="main-bar-wraper navbar-expand-lg">
+      <div class="main-bar p-t5">
+          <div class="container">
+              <div class="logo-header">
+                  <div class="logo-header-inner logo-header-one">
+                    {% if company_info.logo %}
+                      <a href="{% url 'home' %}">
+                          <img src="{{company_info.logo.url}}" style="height: 50px; width: 50px;" alt="" />
+                      </a>
+                      {% endif %}
+                  </div>
+              </div>
+              <!-- NAV Toggle Button -->
+              <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
+                  <span class="icon-bar bar-one"></span>
+                  <span class="icon-bar bar-two"></span>
+                  <span class="icon-bar bar-three"></span>
+              </button>
+                 
+                  <!-- ETRA Nav -->
+                
+                  <!-- SITE Search -->
+                  <div id="search"> 
+                      <span class="close"></span>
+                      <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
+                          <div class="input-group">
+                              <input class="form-control" value="" name="q" type="search" placeholder="Type to search"/>
+                              <span class="input-group-append"><button type="button" class="search-btn"><i class="sl-icon-magnifier"></i></button></span>
+                          </div>   
+                      </form>
+                  </div>                                                                                                          
+                  <!-- MAIN Vav -->
+                  <div class="header-nav navbar-collapse collapse d-flex justify-content-end">
+                      <ul class=" nav navbar-nav">
+                          <li class="active">
+                              <a href="{% url 'home' %}">Home</a>
+                          <li>
+                              <a href="{% url 'about_us' %}">About Us</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'contact_us' %}">Contact us</a>
+                          </li>
+                          <li>
+                              <a href="{% url 'blog' %}">Blog</a>
+                          </li>                                                                                                                     
+                          <li >
+                              <a>Projects</a>
+                              <ul class="sub-menu">
+                                <li><a href="{% url 'all_projects' %}">All</a></li>
+                                <li><a href="{% url 'ready_projects' %}">Ready</a></li>
+                                <li><a href="{% url 'ongoing_projects' %}">Ongoing</a></li>
+                                <li><a href="{% url 'upcoming_projects' %}">Upcoming</a></li>                                       
+                            </ul>
+                          </li>
+                    
+                      </ul>
+                  </div>
+                  
+          </div>
+      </div>
+  </div>
+</header>
+<!-- HEADER END -->
